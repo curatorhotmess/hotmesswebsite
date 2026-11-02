@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOT MESS — Berlin 2020–2022</title>
+<meta name="description" content="HOT MESS: a group exhibition series with Berlin-based artists. Prince Charles 2020, Nåpoleon Komplex 2021, Kühlhaus 2022.">
+<meta property="og:title" content="HOT MESS — Berlin 2020–2022">
+<meta property="og:description" content="A group exhibition series with Berlin-based artists. Archive of the 2020, 2021 and 2022 editions.">
+<meta property="og:image" content="https://hotmess.art/images/2021/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#080808;--white:#ffffff;--blue:#1400ff;--line:rgba(8,8,8,0.12)}
+html{background:var(--white)}
+body{background:var(--white);color:var(--black);font-family:'Space Mono',monospace;overflow-x:hidden;-webkit-text-size-adjust:100%}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+/* ── LANDING ── */
+#landing{position:relative;height:100vh;height:100svh;min-height:520px;display:flex;flex-direction:column}
+.logo-header{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;justify-content:center;padding:clamp(14px,3vw,28px) 24px 0;pointer-events:none}
+.logo-header img{height:clamp(64px,12vw,120px);width:auto;filter:drop-shadow(0 0 30px rgba(20,0,255,0.55))}
+.strips{display:flex;flex:1;min-height:0}
+.strip{flex:1;position:relative;overflow:hidden;cursor:pointer;text-decoration:none;color:var(--white);border-right:3px solid var(--black);transition:flex .65s cubic-bezier(.77,0,.18,1)}
+.strip:last-child{border-right:none}
+@media (hover:hover) and (min-width:641px){.strip:hover,.strip:focus-visible{flex:2.4}}
+.strip-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .65s cubic-bezier(.77,0,.18,1),filter .4s}
+.strip:hover .strip-bg,.strip:focus-visible .strip-bg{transform:scale(1.04);filter:brightness(.6)}
+.strip-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,8,.25) 0%,rgba(8,8,8,.7) 100%)}
+.strip-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:32px 24px;z-index:2}
+.strip-year{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,120px);line-height:1;letter-spacing:-2px;transition:color .3s}
+.strip:hover .strip-year,.strip:focus-visible .strip-year{color:#fff;text-shadow:0 0 0 var(--blue),3px 3px 0 var(--blue)}
+.strip-venue,.strip-cta{display:block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:opacity .4s .1s,transform .4s .1s}
+.strip-venue{color:rgba(255,255,255,.8);margin-bottom:6px}
+.strip-cta{font-size:11px;letter-spacing:.2em;color:#fff;font-weight:700}
+.strip:hover .strip-venue,.strip:hover .strip-cta,.strip:focus-visible .strip-venue,.strip:focus-visible .strip-cta{opacity:1;transform:none}
+.strip-line{position:absolute;top:0;left:0;right:0;height:5px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.77,0,.18,1);z-index:3}
+.strip:hover .strip-line,.strip:focus-visible .strip-line{transform:scaleX(1)}
+@media (hover:none){.strip-venue,.strip-cta{opacity:1;transform:none}.strip-line{transform:scaleX(1)}}
+@media (max-width:640px){.strip-content{padding:20px 10px}.strip-cta{display:none}.strip-venue{font-size:9px;letter-spacing:.06em;line-height:1.4}.strip-year{font-size:clamp(30px,10.5vw,52px);letter-spacing:-1px}}
+
+/* ── YEAR PAGE ── */
+#year-view{min-height:100vh;display:flex;flex-direction:column}
+#year-view[hidden]{display:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px clamp(16px,4vw,40px);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:100;background:var(--white)}
+.back-btn{font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(8,8,8,.3);padding:8px 14px;transition:background .2s,color .2s;white-space:nowrap}
+.back-btn:hover{background:var(--black);color:var(--white)}
+.topbar-logo{height:38px;width:auto}
+.year-label{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--blue);letter-spacing:2px}
+
+.ticker-wrap{background:var(--blue);padding:10px 0;overflow:hidden;border-bottom:3px solid var(--black)}
+.ticker-track{display:flex;width:max-content;animation:ticker 90s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.1em;color:#fff;padding:0 32px;white-space:nowrap}
+.ticker-item::after{content:'✦';margin-left:32px;color:rgba(255,255,255,.5)}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}.strip,.strip-bg{transition:none}}
+
+.hero{position:relative;width:100%;height:68vh;min-height:320px;overflow:hidden;cursor:zoom-in;display:block;border:0;background:none;padding:0}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(255,255,255,.92) 100%);pointer-events:none}
+.hero-title{position:absolute;bottom:32px;left:clamp(16px,4vw,40px);font-family:Arial,Helvetica,sans-serif;font-weight:700;font-style:italic;font-size:clamp(64px,12vw,180px);line-height:.85;color:var(--blue);letter-spacing:-3px;text-align:left;pointer-events:none}
+.hero-title span{display:block}
+
+.about{padding:clamp(36px,6vw,60px) clamp(16px,4vw,40px) 24px;max-width:960px}
+.label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+.about-text p{font-size:15px;line-height:1.85;color:rgba(8,8,8,.8);font-style:italic;margin-bottom:1em}
+.meta{display:flex;flex-wrap:wrap;gap:20px 48px;margin-top:28px;padding-top:28px;border-top:1px solid var(--line)}
+.meta-label{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:rgba(8,8,8,.45);margin-bottom:4px}
+.meta-value{font-size:13px;font-weight:700}
+.credits{margin-top:28px;display:grid;grid-template-columns:max-content 1fr;gap:8px 28px;font-size:12px;line-height:1.6}
+.credits dt{color:rgba(8,8,8,.45);text-transform:uppercase;letter-spacing:.15em;font-size:10px;padding-top:2px}
+@media (max-width:560px){.credits{grid-template-columns:1fr;gap:2px}.credits dd{margin-bottom:10px}}
+
+.section-label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(8,8,8,.45);padding:32px clamp(16px,4vw,40px) 16px}
+.gallery{column-count:3;column-gap:3px;padding:0 3px 3px}
+@media (max-width:900px){.gallery{column-count:2}}
+@media (max-width:520px){.gallery{column-count:1}}
+.gallery figure{break-inside:avoid;margin:0 0 3px;background:#f2f2f2}
+.gallery .lb-open{display:block;width:100%;border:0;padding:0;background:none;cursor:zoom-in}
+.gallery img{width:100%;height:auto;display:block;transition:opacity .3s}
+.gallery .lb-open:hover img{opacity:.85}
+.gallery figcaption{font-size:11px;line-height:1.6;padding:10px 12px 14px;color:rgba(8,8,8,.7);background:var(--white)}
+
+.artists{padding:clamp(36px,6vw,60px) clamp(16px,4vw,40px);border-top:1px solid var(--line)}
+.artists h2,.artists h3{font-size:10px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:rgba(8,8,8,.45);margin-bottom:24px}
+.artists-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0 24px}
+.artists-grid+h3{margin-top:48px}
+.artist-name{font-family:'Bebas Neue',sans-serif;font-size:20px;padding:9px 0;border-bottom:1px solid rgba(8,8,8,.08);letter-spacing:.05em;line-height:1.15;transition:color .2s,padding-left .2s}
+.artist-name:hover{color:var(--blue);padding-left:8px}
+.artist-name small{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0;color:rgba(8,8,8,.5);margin-top:2px}
+
+.series{padding:clamp(36px,6vw,56px) clamp(16px,4vw,40px);border-top:1px solid var(--line);max-width:960px}
+.series p{font-size:13px;line-height:1.8;color:rgba(8,8,8,.7)}
+.yearnav{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--line)}
+.yearnav a{display:block;padding:28px clamp(16px,4vw,40px);text-decoration:none;transition:background .2s,color .2s}
+.yearnav a:hover{background:var(--blue);color:#fff}
+.yearnav a:last-child{text-align:right;border-left:1px solid var(--line)}
+.yearnav b{display:block;font-family:'Bebas Neue',sans-serif;font-size:44px;font-weight:400;line-height:1;letter-spacing:1px}
+.yearnav span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.7}
+.footer{margin-top:auto;padding:32px clamp(16px,4vw,40px);border-top:2px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-left{font-size:11px;color:rgba(8,8,8,.5);line-height:1.8}
+.footer a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);text-decoration:none}
+.footer a:hover{color:var(--black)}
+
+/* ── LIGHTBOX ── */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(255,255,255,.97);z-index:1000;flex-direction:column;align-items:center;justify-content:center;padding:56px 56px 16px;cursor:zoom-out}
+#lightbox.open{display:flex}
+#lb-img{max-width:100%;max-height:calc(100vh - 150px);max-height:calc(100svh - 150px);object-fit:contain}
+#lb-cap{font-size:12px;line-height:1.6;margin-top:14px;max-width:720px;text-align:center;min-height:1.6em}
+#lb-count{position:absolute;top:18px;left:20px;font-size:11px;letter-spacing:.2em}
+.lb-btn{position:absolute;background:none;border:1px solid rgba(8,8,8,.3);font:inherit;font-size:20px;width:44px;height:44px;cursor:pointer;color:var(--black);transition:background .2s,color .2s}
+.lb-btn:hover{background:var(--black);color:#fff}
+#lb-close{top:12px;right:16px}
+#lb-prev{left:12px;top:50%;transform:translateY(-50%)}
+#lb-next{right:12px;top:50%;transform:translateY(-50%)}
+@media (max-width:600px){#lightbox{padding:56px 8px 16px}#lb-prev,#lb-next{top:auto;bottom:12px;transform:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<main id="landing" aria-label="HOT MESS editions">
+  <div class="logo-header"><img src="images/logo.png" alt="HOT MESS"></div>
+  <div class="strips" id="strips"></div>
+</main>
+
+<div id="year-view" hidden></div>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div id="lb-count"></div>
+  <button class="lb-btn" id="lb-close" aria-label="Close">✕</button>
+  <button class="lb-btn" id="lb-prev" aria-label="Previous image">←</button>
+  <button class="lb-btn" id="lb-next" aria-label="Next image">→</button>
+  <img id="lb-img" alt="">
+  <div id="lb-cap"></div>
+</div>
+
+<noscript><p style="padding:40px">HOT MESS — Berlin 2020, 2021, 2022. Please enable JavaScript to view the archive.</p></noscript>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  var YEARS = Object.keys(HOTMESS).sort();
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  };
+  function split(n) {
+    var m = n.match(/^(.*?)\s*\((.*)\)$/);
+    return m ? { name: m[1], note: m[2] } : { name: n, note: '' };
+  }
+  function nameHTML(n) {
+    var p = split(n);
+    return '<div class="artist-name">' + esc(p.name) + (p.note ? '<small>' + esc(p.note) + '</small>' : '') + '</div>';
+  }
+
+  /* landing strips */
+  $('strips').innerHTML = YEARS.map(function (y) {
+    var d = HOTMESS[y];
+    return '<a class="strip" href="#' + y + '" aria-label="HOT MESS ' + y + ', ' + esc(d.venue) + '">' +
+      '<span class="strip-line"></span>' +
+      '<span class="strip-bg" style="background-image:url(\'' + d.hero.src + '\')"></span>' +
+      '<span class="strip-content"><span class="strip-venue">' + esc(d.venueShort) + '</span>' +
+      '<span class="strip-year">' + y + '</span><span class="strip-cta">View exhibition →</span></span></a>';
+  }).join('');
+
+  /* lightbox */
+  var lb = { items: [], i: 0 };
+  function drawLB() {
+    var it = lb.items[lb.i];
+    $('lb-img').src = it.src;
+    $('lb-img').alt = it.alt || '';
+    $('lb-cap').textContent = it.caption || '';
+    $('lb-count').textContent = (lb.i + 1) + ' / ' + lb.items.length;
+  }
+  function openLB(items, i) {
+    lb.items = items; lb.i = i; drawLB();
+    $('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLB() {
+    $('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function stepLB(d) { lb.i = (lb.i + d + lb.items.length) % lb.items.length; drawLB(); }
+  $('lightbox').addEventListener('click', closeLB);
+  $('lb-close').addEventListener('click', function (e) { e.stopPropagation(); closeLB(); });
+  $('lb-prev').addEventListener('click', function (e) { e.stopPropagation(); stepLB(-1); });
+  $('lb-next').addEventListener('click', function (e) { e.stopPropagation(); stepLB(1); });
+  document.addEventListener('keydown', function (e) {
+    if (!$('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowLeft') stepLB(-1);
+    if (e.key === 'ArrowRight') stepLB(1);
+  });
+
+  /* year page */
+  function renderYear(y) {
+    var d = HOTMESS[y];
+    var all = d.artists.concat((d.groups || []).filter(function (g) { return g.inTicker !== false; })
+      .reduce(function (a, g) { return a.concat(g.artists); }, []));
+    var names = all.map(function (n) { return split(n).name; });
+    var tick = names.map(function (n) { return '<span class="ticker-item">' + esc(n) + '</span>'; }).join('');
+    var dur = Math.max(50, Math.round(names.length * 2.4));
+    var items = [d.hero].concat(d.images);
+    var idx = YEARS.indexOf(y);
+    var prev = YEARS[idx - 1], next = YEARS[idx + 1];
+
+    var gallery = d.images.map(function (im, i) {
+      return '<figure><button class="lb-open" data-i="' + (i + 1) + '" aria-label="Enlarge image ' + (i + 1) + '">' +
+        '<img loading="lazy" decoding="async" src="' + im.src + '" width="' + im.w + '" height="' + im.h + '" alt="' + esc(im.alt || '') + '"></button>' +
+        (im.caption ? '<figcaption>' + esc(im.caption) + '</figcaption>' : '') + '</figure>';
+    }).join('');
+
+    var groups = (d.groups || []).map(function (g) {
+      return '<h3>' + esc(g.title) + '</h3><div class="artists-grid">' + g.artists.map(nameHTML).join('') + '</div>';
+    }).join('');
+
+    var credits = d.credits.map(function (c) {
+      return '<dt>' + esc(c[0]) + '</dt><dd>' + esc(c[1]) + '</dd>';
+    }).join('');
+
+    return '' +
+      '<header class="topbar"><a class="back-btn" href="#">← Back</a>' +
+      '<img class="topbar-logo" src="images/logo.png" alt="HOT MESS"><div class="year-label">' + y + '</div></header>' +
+      '<div class="ticker-wrap" aria-label="Participating artists"><div class="ticker-track" style="animation-duration:' + dur + 's">' + tick + tick + '</div></div>' +
+      '<button class="hero lb-open" data-i="0" aria-label="Enlarge image"><img fetchpriority="high" src="' + d.hero.src + '" width="' + d.hero.w + '" height="' + d.hero.h + '" alt="' + esc(d.hero.alt) + '">' +
+      '<span class="hero-overlay"></span><span class="hero-title">HOT<span>MESS</span></span></button>' +
+      '<section class="about"><div class="label">Exhibition statement</div><div class="about-text">' +
+      d.paragraphs.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '</div>' +
+      '<div class="meta">' +
+      '<div><div class="meta-label">Venue</div><div class="meta-value">' + esc(d.venue) + '</div></div>' +
+      '<div><div class="meta-label">Dates</div><div class="meta-value">' + esc(d.dates) + '</div></div>' +
+      '<div><div class="meta-label">Artists</div><div class="meta-value">' + esc(d.count) + '</div></div>' +
+      '<div><div class="meta-label">Curators</div><div class="meta-value">' + esc(d.curators) + '</div></div></div>' +
+      '<dl class="credits">' + credits + '</dl></section>' +
+      '<div class="section-label">' + esc(d.photoCredit) + '</div>' +
+      '<section class="gallery" aria-label="Installation views">' + gallery + '</section>' +
+      '<section class="artists"><h2>Participating artists</h2><div class="artists-grid">' + d.artists.map(nameHTML).join('') + '</div>' + groups + '</section>' +
+      '<section class="series"><div class="label">About HOT MESS</div><p>' + esc(SITE.about) + '</p></section>' +
+      '<nav class="yearnav" aria-label="Other editions">' +
+      (prev ? '<a href="#' + prev + '"><span>← Previous edition</span><b>' + prev + '</b><span>' + esc(HOTMESS[prev].venueShort) + '</span></a>' : '<a href="#" aria-label="Back to start"><span>← Back to start</span><b>HOT MESS</b></a>') +
+      (next ? '<a href="#' + next + '"><span>Next edition →</span><b>' + next + '</b><span>' + esc(HOTMESS[next].venueShort) + '</span></a>' : '<a href="#"><span>Back to start →</span><b>HOT MESS</b></a>') +
+      '</nav>' +
+      '<footer class="footer"><div class="footer-left">HOT MESS · Berlin · 2020–2022<br>Founded by Yolandé Gouws</div>' +
+      '<a href="' + SITE.instagram + '" target="_blank" rel="noopener">' + SITE.instagramHandle + '</a></footer>';
+  }
+
+  function route() {
+    var y = location.hash.replace('#', '');
+    var view = $('year-view'), landing = $('landing');
+    closeLB();
+    if (HOTMESS[y]) {
+      view.innerHTML = renderYear(y);
+      view.hidden = false; landing.style.display = 'none';
+      document.title = 'HOT MESS ' + y + ' — ' + HOTMESS[y].venue;
+      var items = [HOTMESS[y].hero].concat(HOTMESS[y].images);
+      view.onclick = function (e) {
+        var b = e.target.closest('.lb-open');
+        if (b) openLB(items, parseInt(b.getAttribute('data-i'), 10));
+      };
+    } else {
+      view.hidden = true; view.innerHTML = ''; landing.style.display = 'flex';
+      document.title = 'HOT MESS — Berlin 2020–2022';
+    }
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
