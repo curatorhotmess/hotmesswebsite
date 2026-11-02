@@ -33,8 +33,11 @@ img{max-width:100%}
 .strip:last-child{border-right:none}
 @media (hover:hover) and (min-width:641px){.strip:hover,.strip:focus-visible{flex:2.4}}
 .strip-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .65s cubic-bezier(.77,0,.18,1),filter .4s}
-.strip:hover .strip-bg,.strip:focus-visible .strip-bg{transform:scale(1.04);filter:brightness(.6)}
-.strip-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,8,.25) 0%,rgba(8,8,8,.7) 100%)}
+.strip:hover .strip-bg,.strip:focus-visible .strip-bg{transform:scale(1.04)}
+.strip-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,8,8,.25) 0%,rgba(8,8,8,.7) 100%);transition:opacity .4s}
+.strip:hover .strip-bg::after,.strip:focus-visible .strip-bg::after{opacity:0}
+.strip:hover .strip-content,.strip:focus-visible .strip-content{text-shadow:0 1px 14px rgba(0,0,0,.55)}
+@media (hover:hover) and (min-width:641px){.strips:hover .strip:not(:hover) .strip-bg{filter:brightness(.4)}}
 .strip-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:32px 24px;z-index:2}
 .strip-year{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,120px);line-height:1;letter-spacing:-2px;transition:color .3s}
 .strip:hover .strip-year,.strip:focus-visible .strip-year{color:#fff;text-shadow:0 0 0 var(--blue),3px 3px 0 var(--blue)}
