@@ -166,10 +166,39 @@ const SITE = {
 /* ARTIST LINKS — add one line per artist: "Name exactly as listed": "https://their-website",
    Linked names open in a new tab. Names without a line stay as plain text. */
 const LINKS = {
+  // websites
   "Olafur Eliasson": "https://olafureliasson.net",
   "Šejla Kamerić": "https://sejlakameric.com",
   "Katharina Trudzinski": "https://trudzinski.cargo.site",
+  "Katharina Trudzinski & Anna Mirkin": "https://trudzinski.cargo.site",
   "Humatic": "https://www.humatic.de",
   "Lisa Baumgarten": "https://lisabaumgarten.de",
-  "Yolandé Gouws": "https://yolandegouws.com"
+  "Yolandé Gouws": "https://yolandegouws.com",
+  // Instagram (checked)
+  "Ahu Dural": "https://www.instagram.com/ahu_dural/",
+  "Alban Muja": "https://www.instagram.com/albanmuja/",
+  "Alicja Kwade": "https://www.instagram.com/alicjakwade/",
+  "Allistair Walter": "https://www.instagram.com/alliztair/",
+  "Anna Nezhnaya": "https://www.instagram.com/anna_nezhnaya/",
+  "Carla Chan": "https://www.instagram.com/carlac____/",
+  "Daniela Macé-Rossiter": "https://www.instagram.com/danielamross/",
+  "Daniela Mace-Rossiter": "https://www.instagram.com/danielamross/",
+  "Dorothee Diebold": "https://www.instagram.com/dorotheediebold/",
+  "Fabian Kalker x SMS3D": "https://www.instagram.com/sms_3d/",
+  "Super Model Services 3D": "https://www.instagram.com/sms_3d/",
+  "SMS3D x Jakub Kubica": "https://www.instagram.com/sms_3d/",
+  "Fritsche / Gottmanns": "https://www.instagram.com/fritsche_gottmanns/",
+  "Jakub Kubica": "https://www.instagram.com/jakub_kubica248/",
+  "Julian Simon": "https://www.instagram.com/that_julian/",
+  "Lexia Hachtmann": "https://www.instagram.com/lexiahachtmann/",
+  "Lovro Artuković": "https://www.instagram.com/lovroartukovic/",
+  "Mara Fortunatović": "https://www.instagram.com/marafortuna/",
+  "Maria Sécio": "https://www.instagram.com/maria.secio/",
+  "Markus Gley": "https://www.instagram.com/markusgley/",
+  "Mathias Euwer": "https://www.instagram.com/mathias_euwer/",
+  "Nicoleta Auersperg": "https://www.instagram.com/nicoletaauersperg/",
+  "Satoko Kako": "https://www.instagram.com/satokokako_ceramics/",
+  "Kako Satoko": "https://www.instagram.com/satokokako_ceramics/",
+  "Tegan Emerson": "https://www.instagram.com/tegan.emerson/",
+  "Zinu Kim": "https://www.instagram.com/zinu__kim/"
 };
