@@ -162,3 +162,14 @@ const SITE = {
   instagram: "https://instagram.com/hotmess.berlin",
   instagramHandle: "@hotmess.berlin"
 };
+
+/* ARTIST LINKS — add one line per artist: "Name exactly as listed": "https://their-website",
+   Linked names open in a new tab. Names without a line stay as plain text. */
+const LINKS = {
+  "Olafur Eliasson": "https://olafureliasson.net",
+  "Šejla Kamerić": "https://sejlakameric.com",
+  "Katharina Trudzinski": "https://trudzinski.cargo.site",
+  "Humatic": "https://www.humatic.de",
+  "Lisa Baumgarten": "https://lisabaumgarten.de",
+  "Yolandé Gouws": "https://yolandegouws.com"
+};
