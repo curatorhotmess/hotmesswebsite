@@ -77,9 +77,9 @@ const HOTMESS = {
     artists: [
       "Ahmet Ögüt", "Alicja Kwade", "Gregor Hildebrandt", "Philip Topolovac", "Lovro Artuković",
       "Dorothee Diebold", "Roger Eberhard", "Adrian Lohmüller", "Ahu Dural", "Allistair Walther",
-      "Amélié Riech", "Anna Slobodnik", "Artist on the Moon", "Astvaldur", "Baldassarre Mario",
+      "Amélie Riech", "Anna Slobodnik", "Artist on the Moon", "Astvaldur", "Baldassarre Mario",
       "Berenice Güttler", "Colette Vermeulen", "Daniela Mace-Rossiter", "Dareos Khalili",
-      "Dora Durkesac", "Douglas Auersperg", "Ed Gill", "Elsa Leguévaques", "Fabian Anselm Orasch",
+      "Dora Durkesac", "Douglas Auersperg", "Elsa Leguévaques", "Fabian Anselm Orasch",
       "Franziska Harnish", "Fred Thackeray", "Gabriel Beçak", "Gabriela Lesmes Lopez",
       "Gawie Joubert", "Heyon Han", "Humatic (V3 & Christian Grauper)", "Jakub Kubica",
       "Jan Kohlby", "Johannes Schön", "Julia Grybos & Barbora Zentková", "Julian Simon",
@@ -89,7 +89,7 @@ const HOTMESS = {
       "oona calx (Daniella Mooney & Anna van der Ploeg)", "Salvatore Siciliano",
       "Super Model Services 3D (Frieda Femfert & Till Tillsen)", "Satoko Kako",
       "Sebastian Körbs", "Sophia Lee", "Sophie Erlund", "Stefanie Egedy", "Stephanie Cedeño",
-      "Stephen Kent", "Yolandé Gouws", "Yvonne Adreini"
+      "Stephen Kent", "Yolandé Gouws", "Yvonne Andreini"
     ]
   },
 
@@ -200,5 +200,27 @@ const LINKS = {
   "Satoko Kako": "https://www.instagram.com/satokokako_ceramics/",
   "Kako Satoko": "https://www.instagram.com/satokokako_ceramics/",
   "Tegan Emerson": "https://www.instagram.com/tegan.emerson/",
-  "Zinu Kim": "https://www.instagram.com/zinu__kim/"
+  "Zinu Kim": "https://www.instagram.com/zinu__kim/",
+  // added from Yolandé
+  "Odey Curbelo": "https://www.instagram.com/odeycurbelo/",
+  "Ahmet Ögüt": "https://www.instagram.com/ahmet__ogut/",
+  "Amélie Riech": "https://www.instagram.com/amelie.riech/",
+  "Amélie Riech & Regine Rack": "https://www.instagram.com/amelie.riech/",
+  "Berenice Güttler": "https://www.instagram.com/bereniceguettler/",
+  "Douglas Auersperg": "https://www.instagram.com/duxiauersperg/",
+  "Mehtap Baydu": "https://www.instagram.com/mehtapbaydu/",
+  "Roger Eberhard": "https://www.instagram.com/roger_eberhard/",
+  "Anna Slobodnik": "https://www.instagram.com/anna.slobodnik/",
+  "Colette Vermeulen": "https://www.instagram.com/colette_vermeulen/",
+  "Gabriel Beçak": "https://gbecak.info/",
+  "Maria Secio": "https://www.instagram.com/maria.secio/",
+  "Michelle Chen": "https://www.instagram.com/m_ch_ll_ch_n/",
+  "Salvatore Siciliano": "https://www.instagram.com/salvatore_siciliano_/",
+  "Sophie Erlund": "https://www.instagram.com/sophieerlund/",
+  "Yvonne Andreini": "https://yvonne-andreini.com/",
+  "Gregor Hildebrandt": "https://www.gregorhildebrandt.com/",
+  "Adrian Lohmüller": "https://adrianlohmueller.com/",
+  "Elsa Leguévaques": "https://www.instagram.com/elsaleguevaques/",
+  "Keegan Luttrell": "https://www.instagram.com/keeganluttrell/",
+  "Allistair Walther": "https://www.instagram.com/alliztair/"
 };
