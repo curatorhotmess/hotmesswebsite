@@ -101,7 +101,7 @@ img{max-width:100%}
 .artists-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0 24px}
 .artists-grid+h3{margin-top:48px}
 .artist-name{font-family:'Bebas Neue',sans-serif;font-size:20px;padding:9px 0;border-bottom:1px solid rgba(8,8,8,.08);letter-spacing:.05em;line-height:1.15;transition:color .2s,padding-left .2s}
-.artist-name:hover{color:var(--blue);padding-left:8px}
+.artist-name.has-link:hover{color:var(--blue);padding-left:8px}
 .artist-name a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--blue)}
 .artist-name a:hover{color:var(--blue)}
 .artist-name small{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0;color:rgba(8,8,8,.5);margin-top:2px}
@@ -172,7 +172,7 @@ img{max-width:100%}
     var p = split(n);
     var url = (typeof LINKS !== 'undefined' && LINKS[p.name]) || '';
     var label = url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(p.name) + '</a>' : esc(p.name);
-    return '<div class="artist-name">' + label + (p.note ? '<small>' + esc(p.note) + '</small>' : '') + '</div>';
+    return '<div class="artist-name' + (url ? ' has-link' : '') + '">' + label + (p.note ? '<small>' + esc(p.note) + '</small>' : '') + '</div>';
   }
 
   /* landing strips */
