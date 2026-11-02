@@ -129,7 +129,7 @@ const HOTMESS = {
     artists: [
       "Ahu Dural", "Alban Muja", "Alicja Kwade", "Allistair Walter", "Andrea Breinbauer",
       "Anna Nezhnaya", "Carla Chan", "Daniela Macé-Rossiter", "Dorothee Diebold",
-      "Fabian Kalker x SMS3D", "Flavio de Marco", "Fritsche / Gottmanns", "Ivana Franke", "Jaša",
+      "Fabian Kalker x SMS3D", "Flavio de Marco", "Fritsche / Gottmanns", "Ivana Franke",
       "Jiri Arendt", "Julian Simon", "Katharina Trudzinski & Anna Mirkin", "Kiko Dionisio",
       "Lexia Hachtmann", "Lovro Artuković", "Mara Fortunatović", "Maria Sécio", "Markus Gley",
       "Mathias Euwer", "Michelle Antonorsi", "Natascha Schoeinach", "Nicoleta Auersperg",
@@ -144,10 +144,10 @@ const HOTMESS = {
       {
         title: "Team",
         artists: [
-          "Amelia Pallett (communication, design)", "Andrea Wenzler (location)",
+          "Amelia Smith (communication, design)", "Andrea Wenzler (location)",
           "Andrea Šarić (digital strategy)", "Dora Bilandžić (communication design)",
-          "Elin Creese (social media strategy & implementation)", "Golcher Ghavami (event management consultant)",
-          "Ilona Duncombe (location)", "Patricia Bondesson Kavanagh (copy editor)",
+          "Elin Creese (social media strategy & implementation)",
+          "Ilona Duncombe (location)", "Luke Pallett (photography)", "Mario Furčić (executive support)", "Patricia Bondesson Kavanagh (copy editor)",
           "Raffaella Mariadriana Matrone (research assistant)", "Suad Arifagić (transport & installation)",
           "Tegan Emerson (ceramics curator)", "Vanja Žanko (curator)", "Yolandé Gouws (curator)"
         ],
@@ -222,5 +222,6 @@ const LINKS = {
   "Adrian Lohmüller": "https://adrianlohmueller.com/",
   "Elsa Leguévaques": "https://www.instagram.com/elsaleguevaques/",
   "Keegan Luttrell": "https://www.instagram.com/keeganluttrell/",
-  "Allistair Walther": "https://www.instagram.com/alliztair/"
+  "Allistair Walther": "https://www.instagram.com/alliztair/",
+  "Philip Topolovac": "https://philip-topolovac.com/"
 };
