@@ -1,6 +1,6 @@
 /* ============================================================
    HOT MESS — all the website's content lives in this one file.
-   To add a photo: put it in images/<year>/ and add a line to that
+   To add a photo: put it next to index.html (named like 2022_08.jpg) and add a line to that
    year's "images" list below (w and h are the pixel size of the photo).
    To add an artist: add their name to that year's "artists" list.
    ============================================================ */
@@ -24,14 +24,14 @@ const HOTMESS = {
       ["Graphic design", "Lisa Baumgarten"]
     ],
     photoCredit: "Installation views · Photography by Barbara Cilliers",
-    hero: { src: "images/2020/hero.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view, Prince Charles, Berlin" },
+    hero: { src: "2020_hero.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view, Prince Charles, Berlin" },
     images: [
-      { src: "images/2020/01.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" },
-      { src: "images/2020/02.jpg", w: 1600, h: 1066, alt: "HOT MESS 2020 installation view" },
-      { src: "images/2020/03.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" },
-      { src: "images/2020/04.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" },
-      { src: "images/2020/05.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" },
-      { src: "images/2020/06.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" }
+      { src: "2020_01.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" },
+      { src: "2020_02.jpg", w: 1600, h: 1066, alt: "HOT MESS 2020 installation view" },
+      { src: "2020_03.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" },
+      { src: "2020_04.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" },
+      { src: "2020_05.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" },
+      { src: "2020_06.jpg", w: 1600, h: 1067, alt: "HOT MESS 2020 installation view" }
     ],
     artists: [
       "Alicja Kwade", "Amélie Riech & Regine Rack", "Baldassarre Ruspoli", "Berenice Güttler",
@@ -63,16 +63,16 @@ const HOTMESS = {
       ["Social media & organisation", "Elin Creese"]
     ],
     photoCredit: "Installation views · Photography by Barbara Cilliers",
-    hero: { src: "images/2021/hero.jpg", w: 2400, h: 1600, alt: "HOT MESS 2021 installation view, Nåpoleon Komplex, Berlin" },
+    hero: { src: "2021_hero.jpg", w: 2400, h: 1600, alt: "HOT MESS 2021 installation view, Nåpoleon Komplex, Berlin" },
     images: [
-      { src: "images/2021/01.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
-      { src: "images/2021/02.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
-      { src: "images/2021/03.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
-      { src: "images/2021/04.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
-      { src: "images/2021/05.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
-      { src: "images/2021/06.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
-      { src: "images/2021/07.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
-      { src: "images/2021/08.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" }
+      { src: "2021_01.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
+      { src: "2021_02.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
+      { src: "2021_03.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
+      { src: "2021_04.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
+      { src: "2021_05.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
+      { src: "2021_06.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
+      { src: "2021_07.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" },
+      { src: "2021_08.jpg", w: 2000, h: 1333, alt: "HOT MESS 2021 installation view" }
     ],
     artists: [
       "Ahmet Ögüt", "Alicja Kwade", "Gregor Hildebrandt", "Philip Topolovac", "Lovro Artuković",
@@ -114,17 +114,17 @@ const HOTMESS = {
       ["Partner venue", "Kühlhaus Berlin — once an ice factory, the red brick building is now being lovingly restored and is the site of numerous interdisciplinary and cultural events"]
     ],
     photoCredit: "Installation views · Kühlhaus Berlin",
-    hero: { src: "images/2022/hero.jpg", w: 2400, h: 1603, alt: "HOT MESS 2022 installation view, Kühlhaus Berlin" },
+    hero: { src: "2022_hero.jpg", w: 2400, h: 1603, alt: "HOT MESS 2022 installation view, Kühlhaus Berlin" },
     images: [
-      { src: "images/2022/01.jpg", w: 1500, h: 2000, alt: "Visitors in the atrium of Kühlhaus Berlin, red ribbons hanging from above" },
-      { src: "images/2022/02.jpg", w: 1500, h: 2000, alt: "Detail of an orange figurative painting with a green hand" },
-      { src: "images/2022/03.jpg", w: 1500, h: 2000, alt: "A small painting mounted on a steel bracket beside a staircase" },
-      { src: "images/2022/04.jpg", w: 1500, h: 2000,
+      { src: "2022_01.jpg", w: 1500, h: 2000, alt: "Visitors in the atrium of Kühlhaus Berlin, red ribbons hanging from above" },
+      { src: "2022_02.jpg", w: 1500, h: 2000, alt: "Detail of an orange figurative painting with a green hand" },
+      { src: "2022_03.jpg", w: 1500, h: 2000, alt: "A small painting mounted on a steel bracket beside a staircase" },
+      { src: "2022_04.jpg", w: 1500, h: 2000,
         alt: "Hourglass-shaped silk weaving in a walnut frame with gold and silver rings at its centre",
         caption: "Yolandé Gouws & Amélie Riech, Untitled, 2021. Oak, cruelty-free silk, brass, silver, gold, time, love. 100 × 60 cm" },
-      { src: "images/2022/05.jpg", w: 1500, h: 2000, alt: "A wooden S-shaped hook hanging from a steel arch" },
-      { src: "images/2022/06.jpg", w: 1500, h: 2000, alt: "Visitors looking at a hand-built ceramic chess set" },
-      { src: "images/2022/07.jpg", w: 2000, h: 1500, alt: "View from the upper floor down into the atrium of Kühlhaus Berlin" }
+      { src: "2022_05.jpg", w: 1500, h: 2000, alt: "A wooden S-shaped hook hanging from a steel arch" },
+      { src: "2022_06.jpg", w: 1500, h: 2000, alt: "Visitors looking at a hand-built ceramic chess set" },
+      { src: "2022_07.jpg", w: 2000, h: 1500, alt: "View from the upper floor down into the atrium of Kühlhaus Berlin" }
     ],
     artists: [
       "Ahu Dural", "Alban Muja", "Alicja Kwade", "Allistair Walter", "Andrea Breinbauer",
