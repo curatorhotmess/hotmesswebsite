@@ -64,7 +64,7 @@ img{max-width:100%}
 .hero{position:relative;width:100%;height:68vh;min-height:320px;overflow:hidden;cursor:zoom-in;display:block;border:0;background:none;padding:0}
 .hero img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(255,255,255,.92) 100%);pointer-events:none}
-.hero-title{position:absolute;bottom:32px;left:clamp(16px,4vw,40px);font-family:Arial,Helvetica,sans-serif;font-weight:700;font-style:italic;font-size:clamp(64px,12vw,180px);line-height:.85;color:var(--blue);letter-spacing:-3px;text-align:left;pointer-events:none}
+.hero-title{position:absolute;bottom:32px;left:clamp(16px,4vw,40px);font-family:"Arial Black",Arial,Helvetica,sans-serif;font-weight:900;font-style:italic;font-size:clamp(64px,12vw,180px);line-height:.85;color:var(--blue);-webkit-text-stroke:.025em var(--blue);paint-order:stroke fill;letter-spacing:-.02em;text-align:left;pointer-events:none}
 .hero-title span{display:block}
 
 .about{padding:clamp(36px,6vw,60px) clamp(16px,4vw,40px) 24px;max-width:960px}
@@ -77,15 +77,23 @@ img{max-width:100%}
 .credits dt{color:rgba(8,8,8,.45);text-transform:uppercase;letter-spacing:.15em;font-size:10px;padding-top:2px}
 @media (max-width:560px){.credits{grid-template-columns:1fr;gap:2px}.credits dd{margin-bottom:10px}}
 
-.section-label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(8,8,8,.45);padding:32px clamp(16px,4vw,40px) 16px}
-.gallery{column-count:3;column-gap:3px;padding:0 3px 3px}
-@media (max-width:900px){.gallery{column-count:2}}
-@media (max-width:520px){.gallery{column-count:1}}
-.gallery figure{break-inside:avoid;margin:0 0 3px;background:#f2f2f2}
-.gallery .lb-open{display:block;width:100%;border:0;padding:0;background:none;cursor:zoom-in}
-.gallery img{width:100%;height:auto;display:block;transition:opacity .3s}
-.gallery .lb-open:hover img{opacity:.85}
-.gallery figcaption{font-size:11px;line-height:1.6;padding:10px 12px 14px;color:rgba(8,8,8,.7);background:var(--white)}
+.section-label{display:flex;justify-content:space-between;gap:16px;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(8,8,8,.45);padding:32px clamp(16px,4vw,40px) 16px}
+.carousel{position:relative;padding:0 0 12px}
+.car-track{display:flex;gap:3px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 3px;scroll-padding-left:3px;scrollbar-width:none;-webkit-overflow-scrolling:touch;position:relative}
+.car-track::-webkit-scrollbar{display:none}
+.car-track:focus-visible{outline-offset:-3px}
+.car-track figure{flex:0 0 auto;scroll-snap-align:start;margin:0;display:flex;flex-direction:column;max-width:calc(100vw - 6px)}
+.car-track .lb-open{display:block;border:0;padding:0;background:#f2f2f2;cursor:zoom-in}
+.car-track img{display:block;width:auto;height:auto;max-height:min(70vh,640px);max-width:calc(100vw - 6px)}
+.car-track figure{position:relative;align-self:flex-start}
+.car-track figcaption{position:absolute;left:0;right:0;bottom:0;pointer-events:none;font-size:11px;line-height:1.6;padding:36px 14px 12px;color:#fff;background:linear-gradient(to bottom,rgba(8,8,8,0),rgba(8,8,8,.78))}
+.car-btn{position:absolute;top:calc(50% - 24px);z-index:5;width:48px;height:48px;border:1px solid var(--black);background:var(--white);color:var(--black);font:inherit;font-size:22px;line-height:1;cursor:pointer;transition:background .2s,color .2s,opacity .2s}
+.car-btn:hover:not(:disabled){background:var(--blue);color:#fff;border-color:var(--blue)}
+.car-btn:disabled{opacity:.25;cursor:default}
+.car-btn.prev{left:12px}
+.car-btn.next{right:12px}
+@media (max-width:600px){.car-btn{width:40px;height:40px;font-size:18px;top:calc(50% - 20px)}.car-btn.prev{left:8px}.car-btn.next{right:8px}}
+@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 
 .artists{padding:clamp(36px,6vw,60px) clamp(16px,4vw,40px);border-top:1px solid var(--line)}
 .artists h2,.artists h3{font-size:10px;font-weight:400;letter-spacing:.25em;text-transform:uppercase;color:rgba(8,8,8,.45);margin-bottom:24px}
@@ -242,8 +250,11 @@ img{max-width:100%}
       '<div><div class="meta-label">Artists</div><div class="meta-value">' + esc(d.count) + '</div></div>' +
       '<div><div class="meta-label">Curators</div><div class="meta-value">' + esc(d.curators) + '</div></div></div>' +
       '<dl class="credits">' + credits + '</dl></section>' +
-      '<div class="section-label">' + esc(d.photoCredit) + '</div>' +
-      '<section class="gallery" aria-label="Installation views">' + gallery + '</section>' +
+      '<div class="section-label"><span>' + esc(d.photoCredit) + '</span><span id="car-count"></span></div>' +
+      '<section class="carousel" aria-roledescription="carousel" aria-label="Installation views">' +
+      '<button class="car-btn prev" aria-label="Previous image">←</button>' +
+      '<div class="car-track" tabindex="0">' + gallery + '</div>' +
+      '<button class="car-btn next" aria-label="Next image">→</button></section>' +
       '<section class="artists"><h2>Participating artists</h2><div class="artists-grid">' + d.artists.map(nameHTML).join('') + '</div>' + groups + '</section>' +
       '<section class="series"><div class="label">About HOT MESS</div><p>' + esc(SITE.about) + '</p></section>' +
       '<nav class="yearnav" aria-label="Other editions">' +
@@ -254,6 +265,41 @@ img{max-width:100%}
       '<a href="' + SITE.instagram + '" target="_blank" rel="noopener">' + SITE.instagramHandle + '</a></footer>';
   }
 
+  /* carousel */
+  function initCarousel(root) {
+    var track = root.querySelector('.car-track');
+    if (!track) return;
+    var slides = [].slice.call(track.children), n = slides.length, raf = 0;
+    var prev = root.querySelector('.car-btn.prev'), next = root.querySelector('.car-btn.next');
+    var count = root.querySelector('#car-count');
+    function idx() {
+      var l = track.scrollLeft + 8, k = 0;
+      for (var i = 0; i < n; i++) { if (slides[i].offsetLeft - 3 <= l) k = i; }
+      return k;
+    }
+    function update() {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      if (count) count.textContent = (next.disabled ? n : idx() + 1) + ' / ' + n;
+    }
+    function go(i) { track.scrollTo({ left: Math.max(0, slides[i].offsetLeft - 3), behavior: 'smooth' }); }
+    prev.addEventListener('click', function () {
+      var i = idx(), partial = track.scrollLeft - (slides[i].offsetLeft - 3) > 8;
+      go(partial ? i : Math.max(0, i - 1));
+    });
+    next.addEventListener('click', function () { go(Math.min(n - 1, idx() + 1)); });
+    track.addEventListener('scroll', function () {
+      if (!raf) raf = requestAnimationFrame(function () { raf = 0; update(); });
+    }, { passive: true });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+    });
+    track.addEventListener('load', update, true);
+    window.addEventListener('resize', update);
+    update();
+  }
+
   function route() {
     var y = location.hash.replace('#', '');
     var view = $('year-view'), landing = $('landing');
@@ -261,6 +307,7 @@ img{max-width:100%}
     if (HOTMESS[y]) {
       view.innerHTML = renderYear(y);
       view.hidden = false; landing.style.display = 'none';
+      initCarousel(view);
       document.title = 'HOT MESS ' + y + ' — ' + HOTMESS[y].venue;
       var items = [HOTMESS[y].hero].concat(HOTMESS[y].images);
       view.onclick = function (e) {
